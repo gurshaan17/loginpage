@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 
-mongoose.connect("mongodb+srv://admin1:admin1@cluster0.4lgwcnp.mongodb.net/")
+mongoose.connect("mongodb://localhost:27017")
+# Provide your own mongoDB connection string here
 
 userSchema = new mongoose.Schema({
     username: String,
