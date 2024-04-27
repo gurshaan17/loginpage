@@ -16,16 +16,16 @@ app.post("/signin", async (req, res) => {
         if (user) {
             const result = await bcrypt.compare(req.body.password, user.password);
             if (result) {
-                res.json({ message: "Login successful" }); // Changed to JSON response
+                res.json({ message: "Login successful" })
             } else {
-                res.status(401).json({ error: "Invalid password" }); // Changed status code and message
+                res.status(401).json({ error: "Invalid password" })
             }
         } else {
-            res.status(404).json({ error: "User not found" }); // Changed status code and message
+            res.status(404).json({ error: "User not found" })
         }
     } catch (error) {
         console.error(error); // Log the error
-        res.status(500).json({ error: "Internal server error" }); // Added proper error message
+        res.status(500).json({ error: "Internal server error" })
     }
 })
 
